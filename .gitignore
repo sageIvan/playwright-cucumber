@@ -137,3 +137,16 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Playwright/Cucumber specific
+reports/
+allure-results/
+allure-report/
+cucumber-report.json
+cucumber-report.html
+screenshots/
+*.png
+
+# Environment variables
+.env
+.env.local
