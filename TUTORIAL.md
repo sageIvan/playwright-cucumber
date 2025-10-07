@@ -194,12 +194,15 @@ Example output:
 │   ├── 03-clicking-interactions.feature # Lesson 3: User interactions
 │   ├── 04-waiting-timing.feature      # Lesson 4: Timing and waits
 │   ├── 05-advanced-scenarios.feature  # Lesson 5: Real-world tests
-│   └── sample.feature                 # Original example (Google)
+│   ├── 06-api-basics.feature          # Lesson 6: API testing intro
+│   ├── 07-api-methods.feature         # Lesson 7: HTTP methods
+│   └── 08-api-advanced.feature        # Lesson 8: Advanced API
 ├── support/
 │   ├── step-definitions/
 │   │   ├── tutorial-steps.ts          # Steps for lessons 1-3
 │   │   ├── tutorial-advanced-steps.ts # Steps for lessons 4-5
-│   │   └── sample-steps.ts            # Original Google example
+│   │   ├── api-basic-steps.ts         # Steps for lessons 6-7
+│   │   └── api-advanced-steps.ts      # Steps for lesson 8
 │   ├── hooks.ts                       # Browser setup/teardown
 │   └── world.ts                       # Shared test context
 └── README.md                          # This guide

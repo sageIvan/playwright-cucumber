@@ -23,10 +23,13 @@ A **step-by-step tutorial** for learning web automation with Playwright and Cucu
 
 ```
 ├── features/                 # Feature files with scenarios
-│   └── sample.feature       # Example feature file
+│   ├── 00-quick-start.feature    # Quick start lesson
+│   ├── 01-basic-navigation.feature # Basic web navigation
+│   └── 06-api-basics.feature     # API testing introduction
 ├── support/                 # Support files
 │   ├── step-definitions/    # Step definition files
-│   │   └── sample-steps.ts # Example step definitions
+│   │   ├── tutorial-steps.ts      # Web testing steps
+│   │   └── api-basic-steps.ts     # API testing steps
 │   ├── hooks.ts            # Before/After hooks
 │   └── world.ts            # World object with browser setup
 ├── reports/                # Test reports and screenshots
