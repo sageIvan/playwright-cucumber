@@ -13,6 +13,12 @@ A **step-by-step tutorial** for learning web automation with Playwright and Cucu
 - 🎯 **Cross-browser Testing** - Support for Chrome, Firefox, and Safari
 - 🏷️ **Tagging** - Organize and filter tests with tags
 
+## 📖 Quick Documentation Links
+
+- **[📚 Tutorial Guide](./TUTORIAL.md)** - Step-by-step learning path from beginner to advanced
+- **[⚙️ Playwright Methods Reference](./PLAYWRIGHT-METHODS.md)** - Complete API documentation with examples
+- **[🌐 Official Playwright Docs](https://playwright.dev/docs/intro)** - Comprehensive framework documentation
+
 ## Project Structure
 
 ```
@@ -115,6 +121,30 @@ Given('I am on the login page', async function (this: CustomWorld) {
 - Include/exclude patterns
 - Type definitions
 
+## Documentation
+
+This project includes comprehensive documentation to help you learn and reference Playwright testing:
+
+### 📚 **Learning Resources**
+
+- **[TUTORIAL.md](./TUTORIAL.md)** - Complete step-by-step tutorial guide
+  - Progressive lessons from basic navigation to advanced API testing
+  - Learning objectives and practical examples for each lesson
+  - Beginner-friendly explanations of testing concepts
+  - Real-world scenarios and best practices
+
+- **[PLAYWRIGHT-METHODS.md](./PLAYWRIGHT-METHODS.md)** - Comprehensive API reference
+  - Detailed documentation of 50+ Playwright methods
+  - Complete parameter explanations and available options
+  - Practical code examples and usage patterns
+  - Cross-references to tutorial lessons for integrated learning
+
+### 🌐 **External Resources**
+
+- **[Official Playwright Documentation](https://playwright.dev/docs/intro)** - Complete API reference and guides
+- **[Playwright GitHub Repository](https://github.com/microsoft/playwright)** - Source code and issue tracking
+- **[Cucumber.js Documentation](https://cucumber.io/docs/cucumber/)** - BDD framework documentation
+
 ## Reports
 
 After running tests, reports are generated in the `reports/` directory:
@@ -208,3 +238,26 @@ This will:
 - Run in headed mode
 - Execute only tests tagged with `@debug`
 - Show browser interactions in real-time
+
+---
+
+## 🔗 Additional Resources
+
+### Official Documentation
+- **[Playwright Official Website](https://playwright.dev/)** - Main Playwright site with getting started guides
+- **[Playwright API Reference](https://playwright.dev/docs/api/class-playwright)** - Complete API documentation
+- **[Playwright Test Runner](https://playwright.dev/docs/test-intro)** - Built-in test runner documentation
+- **[Cucumber.js Official Docs](https://cucumber.io/docs/cucumber/)** - BDD framework documentation
+
+### Community Resources  
+- **[Playwright GitHub](https://github.com/microsoft/playwright)** - Source code and issue tracking
+- **[Playwright Discord](https://aka.ms/playwright/discord)** - Community chat and support
+- **[Stack Overflow](https://stackoverflow.com/questions/tagged/playwright)** - Q&A with playwright tag
+
+### Learning Materials
+- **[Playwright University](https://playwright.dev/docs/intro#learning-path)** - Official learning path
+- **[Test Automation University](https://testautomationu.applitools.com/playwright-tutorial/)** - Free courses
+
+---
+
+*Happy Testing! 🎭🚀*
