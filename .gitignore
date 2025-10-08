@@ -144,6 +144,11 @@ test-results/
 screenshots/
 *.png
 
+# Allure reports and legacy Cucumber reports
+allure-report/
+allure-results/
+reports/
+
 # Environment variables
 .env
 .env.local
