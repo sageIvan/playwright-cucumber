@@ -28,14 +28,17 @@
         ]
     },
     "include": [
-        "features/**/*",
-        "support/**/*",
+        "tests/**/*",
         "src/**/*"
     ],
     "exclude": [
         "node_modules",
         "dist",
         "allure-results",
-        "allure-report"
+        "allure-report",
+        "reports",
+        "playwright-report",
+        "test-results",
+        "support"
     ]
 }
