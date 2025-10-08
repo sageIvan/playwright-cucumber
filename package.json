@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "tutorial": "cucumber-js --tags @tutorial",
+    "tutorial:lesson0": "cucumber-js --tags @lesson-0",
     "tutorial:lesson1": "cucumber-js --tags @lesson-1",
-    "tutorial:lesson2": "cucumber-js --tags @lesson-2", 
+    "tutorial:lesson2": "cucumber-js --tags @lesson-2",
     "tutorial:lesson3": "cucumber-js --tags @lesson-3",
     "tutorial:lesson4": "cucumber-js --tags @lesson-4",
     "tutorial:lesson5": "cucumber-js --tags @lesson-5",
@@ -31,7 +32,13 @@
     "api:with-report": "npm run tutorial:api && npm run report:generate",
     "build": "tsc",
     "lint": "eslint . --ext .ts,.js",
-    "lint:fix": "eslint . --ext .ts,.js --fix"
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "playwright": "npx playwright test",
+    "playwright:ui": "npx playwright test --ui",
+    "playwright:headed": "npx playwright test --headed",
+    "generate:specs": "node regenerate-specs.js",
+    "dev:ui": "node generate-specs.js",
+    "ui:refresh": "node generate-specs.js"
   },
   "keywords": [
     "playwright",
@@ -55,6 +62,5 @@
     "prettier": "^3.3.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
-  },
-  "dependencies": {}
+  }
 }

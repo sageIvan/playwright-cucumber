@@ -147,6 +147,12 @@ cucumber-report.html
 screenshots/
 *.png
 
+# Playwright Tests (generated files - not part of main Cucumber project)
+tests-playwright/
+playwright.config.ts
+playwright-report/
+test-results/
+
 # Environment variables
 .env
 .env.local
