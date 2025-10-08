@@ -1,0 +1,109 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"As a beginner learning API automation
+    I want to understand different ways to interact with APIs
+    So that I can test creating, updating, and deleting data","1026","Creating new data with POST requests","","Tue Oct 07 13:01:08 CEST 2025","passed","Tue Oct 07 13:01:09 CEST 2025","","Creating new data with POST requests","",""
+"As someone new to web automation
+    I want to see a simple working example
+    So that I can understand what this tool can do","5455","Understanding what we can do","","Tue Oct 07 12:58:01 CEST 2025","passed","Tue Oct 07 12:58:06 CEST 2025","","Understanding what we can do","",""
+"As a beginner learning API automation
+    I want to understand different ways to interact with APIs
+    So that I can test creating, updating, and deleting data","1984","Deleting data with DELETE requests","","Tue Oct 07 13:01:11 CEST 2025","passed","Tue Oct 07 13:01:13 CEST 2025","","Deleting data with DELETE requests","",""
+"As a beginner learning web automation
+    I want to understand how to navigate to websites
+    So that I can start my automation journey","11800","Checking if we're on the right page","","Tue Oct 07 12:58:10 CEST 2025","passed","Tue Oct 07 12:58:22 CEST 2025","","Checking if we're on the right page","",""
+"As a beginner who has learned the basics
+    I want to practice with real websites and advanced scenarios
+    So that I can apply my knowledge to practical situations","20535","Handling JavaScript alerts and popups","","Tue Oct 07 12:59:53 CEST 2025","failed","Tue Oct 07 13:00:13 CEST 2025","","Handling JavaScript alerts and popups","",""
+"As a beginner learning web automation
+    I want to understand how to click on things and interact with a webpage
+    So that I can simulate user actions","7037","Selecting options from dropdowns","","Tue Oct 07 12:58:46 CEST 2025","failed","Tue Oct 07 12:58:53 CEST 2025","","Selecting options from dropdowns","",""
+"As a beginner who has learned the basics
+    I want to practice with real websites and advanced scenarios
+    So that I can apply my knowledge to practical situations","11193","Working with a real e-commerce website","","Tue Oct 07 12:59:38 CEST 2025","failed","Tue Oct 07 12:59:49 CEST 2025","","Working with a real e-commerce website","",""
+"As a beginner learning API automation
+    I want to understand what APIs are and how to test them
+    So that I can test both websites and their backend services","11015","Getting a list of data from an API","","Tue Oct 07 13:00:42 CEST 2025","passed","Tue Oct 07 13:00:53 CEST 2025","","Getting a list of data from an API","",""
+"As a beginner learning API automation
+    I want to understand different ways to interact with APIs
+    So that I can test creating, updating, and deleting data","700","Partially updating data with PATCH requests","","Tue Oct 07 13:01:10 CEST 2025","passed","Tue Oct 07 13:01:11 CEST 2025","","Partially updating data with PATCH requests","",""
+"As an advanced learner of API automation
+    I want to test APIs with authentication and complex scenarios
+    So that I can test real-world API applications","12393","Testing API performance and rate limits","","Tue Oct 07 13:01:28 CEST 2025","failed","Tue Oct 07 13:01:40 CEST 2025","","Testing API performance and rate limits","",""
+"As a beginner learning API automation
+    I want to understand what APIs are and how to test them
+    So that I can test both websites and their backend services","1468","Understanding what an API is","","Tue Oct 07 13:00:41 CEST 2025","passed","Tue Oct 07 13:00:42 CEST 2025","","Understanding what an API is","",""
+"As a beginner learning web automation
+    I want to understand how to click on things and interact with a webpage
+    So that I can simulate user actions","3248","Submitting a form","","Tue Oct 07 12:58:53 CEST 2025","failed","Tue Oct 07 12:58:57 CEST 2025","","Submitting a form","",""
+"As a beginner learning web automation
+    I want to understand how to click on things and interact with a webpage
+    So that I can simulate user actions","2761","Clicking on links","","Tue Oct 07 12:58:38 CEST 2025","passed","Tue Oct 07 12:58:41 CEST 2025","","Clicking on links","",""
+"As a beginner learning web automation
+    I want to understand how to click on things and interact with a webpage
+    So that I can simulate user actions","5602","Working with forms - typing in input fields","","Tue Oct 07 12:58:41 CEST 2025","passed","Tue Oct 07 12:58:46 CEST 2025","","Working with forms - typing in input fields","",""
+"As a beginner learning web automation
+    I want to understand how to wait for things to happen on a webpage
+    So that I can handle slow-loading websites and dynamic content","8814","Understanding timeouts","","Tue Oct 07 12:59:18 CEST 2025","passed","Tue Oct 07 12:59:26 CEST 2025","","Understanding timeouts","",""
+"As a beginner learning web automation
+    I want to understand how to find elements on a webpage
+    So that I can interact with different parts of a website","1441","Finding text on a page","","Tue Oct 07 12:58:22 CEST 2025","passed","Tue Oct 07 12:58:23 CEST 2025","","Finding text on a page","",""
+"As a beginner learning API automation
+    I want to understand different ways to interact with APIs
+    So that I can test creating, updating, and deleting data","11500","Testing error responses and edge cases","","Tue Oct 07 13:01:13 CEST 2025","passed","Tue Oct 07 13:01:24 CEST 2025","","Testing error responses and edge cases","",""
+"As a beginner who has learned the basics
+    I want to practice with real websites and advanced scenarios
+    So that I can apply my knowledge to practical situations","15321","File upload functionality","","Tue Oct 07 13:00:25 CEST 2025","failed","Tue Oct 07 13:00:41 CEST 2025","","File upload functionality","",""
+"As a beginner who has learned the basics
+    I want to practice with real websites and advanced scenarios
+    So that I can apply my knowledge to practical situations","12052","Working with dynamic content","","Tue Oct 07 13:00:13 CEST 2025","passed","Tue Oct 07 13:00:25 CEST 2025","","Working with dynamic content","",""
+"As a beginner learning web automation
+    I want to understand how to wait for things to happen on a webpage
+    So that I can handle slow-loading websites and dynamic content","11359","Waiting for user interactions to complete","","Tue Oct 07 12:59:26 CEST 2025","passed","Tue Oct 07 12:59:38 CEST 2025","","Waiting for user interactions to complete","",""
+"As an advanced learner of API automation
+    I want to test APIs with authentication and complex scenarios
+    So that I can test real-world API applications","5099","Complex data validation and schema testing","","Tue Oct 07 13:01:40 CEST 2025","passed","Tue Oct 07 13:01:45 CEST 2025","","Complex data validation and schema testing","",""
+"As an advanced learner of API automation
+    I want to test APIs with authentication and complex scenarios
+    So that I can test real-world API applications","2273","Testing API workflows (chaining requests)","","Tue Oct 07 13:01:45 CEST 2025","failed","Tue Oct 07 13:01:47 CEST 2025","","Testing API workflows (chaining requests)","",""
+"As someone new to web automation
+    I want to see a simple working example
+    So that I can understand what this tool can do","29178","My first automated test","","Tue Oct 07 12:57:31 CEST 2025","passed","Tue Oct 07 12:58:01 CEST 2025","","My first automated test","",""
+"As a beginner learning web automation
+    I want to understand how to find elements on a webpage
+    So that I can interact with different parts of a website","11336","Checking if elements exist or not","","Tue Oct 07 12:58:27 CEST 2025","passed","Tue Oct 07 12:58:38 CEST 2025","","Checking if elements exist or not","",""
+"As a beginner learning web automation
+    I want to understand how to navigate to websites
+    So that I can start my automation journey","2071","Understanding what we can see on a webpage","","Tue Oct 07 12:58:08 CEST 2025","passed","Tue Oct 07 12:58:10 CEST 2025","","Understanding what we can see on a webpage","",""
+"As a beginner learning API automation
+    I want to understand what APIs are and how to test them
+    So that I can test both websites and their backend services","4303","Checking response times and performance","","Tue Oct 07 13:00:53 CEST 2025","passed","Tue Oct 07 13:00:58 CEST 2025","","Checking response times and performance","",""
+"As a beginner learning web automation
+    I want to understand how to wait for things to happen on a webpage
+    So that I can handle slow-loading websites and dynamic content","9655","Waiting for text to change","","Tue Oct 07 12:59:08 CEST 2025","passed","Tue Oct 07 12:59:18 CEST 2025","","Waiting for text to change","",""
+"As a beginner learning web automation
+    I want to understand how to navigate to websites
+    So that I can start my automation journey","1945","Opening a website for the first time","","Tue Oct 07 12:58:06 CEST 2025","passed","Tue Oct 07 12:58:08 CEST 2025","","Opening a website for the first time","",""
+"As a beginner learning web automation
+    I want to understand how to find elements on a webpage
+    So that I can interact with different parts of a website","1382","Finding buttons and links","","Tue Oct 07 12:58:23 CEST 2025","passed","Tue Oct 07 12:58:25 CEST 2025","","Finding buttons and links","",""
+"As a beginner learning API automation
+    I want to understand different ways to interact with APIs
+    So that I can test creating, updating, and deleting data","1074","Updating data with PUT requests","","Tue Oct 07 13:01:09 CEST 2025","passed","Tue Oct 07 13:01:10 CEST 2025","","Updating data with PUT requests","",""
+"As an advanced learner of API automation
+    I want to test APIs with authentication and complex scenarios
+    So that I can test real-world API applications","1823","Testing APIs with authentication headers","","Tue Oct 07 13:01:24 CEST 2025","passed","Tue Oct 07 13:01:26 CEST 2025","","Testing APIs with authentication headers","",""
+"As a beginner learning API automation
+    I want to understand what APIs are and how to test them
+    So that I can test both websites and their backend services","10649","Testing different types of data","","Tue Oct 07 13:00:58 CEST 2025","passed","Tue Oct 07 13:01:08 CEST 2025","","Testing different types of data","",""
+"As a beginner learning web automation
+    I want to understand how to wait for things to happen on a webpage
+    So that I can handle slow-loading websites and dynamic content","11331","Waiting for elements to appear","","Tue Oct 07 12:58:57 CEST 2025","passed","Tue Oct 07 12:59:08 CEST 2025","","Waiting for elements to appear","",""
+"As a beginner learning web automation
+    I want to understand how to find elements on a webpage
+    So that I can interact with different parts of a website","1987","Finding elements by their HTML properties","","Tue Oct 07 12:58:25 CEST 2025","passed","Tue Oct 07 12:58:27 CEST 2025","","Finding elements by their HTML properties","",""
+"As an advanced learner of API automation
+    I want to test APIs with authentication and complex scenarios
+    So that I can test real-world API applications","1363","Testing input validation and error handling","","Tue Oct 07 13:01:26 CEST 2025","passed","Tue Oct 07 13:01:28 CEST 2025","","Testing input validation and error handling","",""
+"As a beginner who has learned the basics
+    I want to practice with real websites and advanced scenarios
+    So that I can apply my knowledge to practical situations","3746","Testing a login form (with demo credentials)","","Tue Oct 07 12:59:49 CEST 2025","failed","Tue Oct 07 12:59:53 CEST 2025","","Testing a login form (with demo credentials)","",""

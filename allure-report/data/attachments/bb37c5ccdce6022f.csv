@@ -1,0 +1,9 @@
+field,type,required
+id,number,true
+name,string,true
+username,string,true
+email,string,true
+address,object,true
+phone,string,true
+website,string,true
+company,object,true
