@@ -13,26 +13,47 @@ const randomEmail = () => `test_${random()}@example.com`;
 const randomPhone = () =>
   `${Math.floor(Math.random() * 900) + 100}-${Math.floor(Math.random() * 900) + 100}-${Math.floor(Math.random() * 9000) + 1000}`;
 const uuid = () => crypto.randomUUID();
-const today = () => new Date().toISOString().split('T')[0];
-const timestamp = () => new Date().toISOString();
 
 // 🏆 **DATA TABLES WITH DYNAMIC VALUES**
 test.describe('🥒 Cucumber-Style Data Tables', () => {
-  const testData = [
-    ['John', 'Doe', randomEmail(), randomPhone(), 'Valid user', 'success'],
-    ['', 'Smith', randomEmail(), randomPhone(), 'Missing name', 'failure'],
-    ['Alice', 'Brown', 'invalid-email', randomPhone(), 'Invalid email', 'failure'],
-    ['Bob', 'Wilson', randomEmail(), 'invalid-phone', 'Invalid phone', 'failure'],
-    ['Charlie', 'Davis', randomEmail(), randomPhone(), 'Valid user', 'success'],
-  ];
+  // 🎯 Tagged template for tables with real function calls inside forEach
+  function table(strings: TemplateStringsArray) {
+    return strings[0]
+      .trim()
+      .split('\n')
+      .map((line) =>
+        line
+          .split('|')
+          .map((cell) => cell.trim())
+          .filter((cell) => cell)
+      )
+      .filter((row) => row.length > 0);
+  }
 
-  testData.forEach(([firstName, lastName, email, phone, scenario, expected], index) => {
+  // 🥒 Real Cucumber table with function calls that execute fresh each test!
+  const testDataWithHeaders = table`
+    | firstName | lastName | email         | phone         | scenario       | expected |
+    | John      | Doe      | randomEmail() | randomPhone() | Valid user     | success  |
+    |           | Smith    | randomEmail() | randomPhone() | Missing name   | failure  |
+    | Alice     | Brown    | invalid-email | randomPhone() | Invalid email  | failure  |
+    | Bob       | Wilson   | randomEmail() | invalid-phone | Invalid phone  | failure  |
+    | Charlie   | Davis    | randomEmail() | randomPhone() | Valid user     | success  |
+  `;
+
+  const [headers, ...testData] = testDataWithHeaders;
+
+  testData.forEach(([firstName, lastName, emailCall, phoneCall, scenario, expected], index) => {
     test(`Data Table ${index + 1}: ${scenario}`, async ({ managedPage }) => {
+      // 🎲 Evaluate function calls fresh inside each test execution!
+      const email = emailCall === 'randomEmail()' ? randomEmail() : emailCall;
+      const phone = phoneCall === 'randomPhone()' ? randomPhone() : phoneCall;
       const testId = uuid().slice(0, 6);
       const sessionId = random();
 
       console.log(`🥒 Testing: ${scenario} [${testId}] Session: ${sessionId}`);
       console.log(`📊 Data: ${firstName}|${lastName}|${email}|${phone}`);
+      console.log(`📋 Headers: ${headers.join('|')}`);
+      console.log(`🎲 Function calls: ${emailCall}→${email}, ${phoneCall}→${phone}`);
 
       await managedPage.goto('https://httpbin.org/forms/post');
 
