@@ -6,6 +6,7 @@ A **step-by-step tutorial** for learning web automation with Playwright and Cucu
 
 - 🎭 **Playwright** - Modern browser automation
 - 🥒 **Cucumber** - BDD framework with Gherkin syntax
+- 🥒 **Data Tables** - Cucumber-style pipe-delimited tables with dynamic values in pure Playwright
 - 📘 **TypeScript** - Type safety and better IDE support
 - 🔄 **Parallel Execution** - Run tests in parallel for faster execution
 - 📊 **HTML & JSON Reports** - Comprehensive test reporting
@@ -17,23 +18,32 @@ A **step-by-step tutorial** for learning web automation with Playwright and Cucu
 
 - **[📚 Tutorial Guide](./TUTORIAL.md)** - Step-by-step learning path from beginner to advanced
 - **[⚙️ Playwright Methods Reference](./PLAYWRIGHT-METHODS.md)** - Complete API documentation with examples
+- **[🥒 Data Tables Guide](./DATA-TABLES.md)** - Cucumber-style data tables with dynamic values in Playwright
 - **[🌐 Official Playwright Docs](https://playwright.dev/docs/intro)** - Comprehensive framework documentation
 
 ## Project Structure
 
 ```
-├── features/                 # Feature files with scenarios
+├── features/                 # Feature files with scenarios (Cucumber-based)
 │   ├── 00-quick-start.feature    # Quick start lesson
 │   ├── 01-basic-navigation.feature # Basic web navigation
 │   └── 06-api-basics.feature     # API testing introduction
-├── support/                 # Support files
+├── tests/                   # Pure Playwright test files
+│   ├── 00-quick-start.spec.ts    # Basic Playwright examples
+│   ├── 10-data-tables-consolidated.spec.ts # Data tables with dynamic values
+│   └── ...                       # Additional Playwright tests
+├── support/                 # Support files (Cucumber)
 │   ├── step-definitions/    # Step definition files
 │   │   ├── tutorial-steps.ts      # Web testing steps
 │   │   └── api-basic-steps.ts     # API testing steps
 │   ├── hooks.ts            # Before/After hooks
 │   └── world.ts            # World object with browser setup
 ├── reports/                # Test reports and screenshots
+├── DATA-TABLES.md          # Data tables documentation
+├── TUTORIAL.md             # Complete tutorial guide
+├── PLAYWRIGHT-METHODS.md   # API reference documentation  
 ├── cucumber.js             # Cucumber configuration
+├── playwright.config.ts    # Playwright configuration
 ├── tsconfig.json          # TypeScript configuration
 └── package.json           # Dependencies and scripts
 ```
@@ -54,7 +64,8 @@ A **step-by-step tutorial** for learning web automation with Playwright and Cucu
 
 ### Running Tests
 
-- **Run all tests:**
+#### Cucumber Tests (Traditional BDD)
+- **Run all Cucumber tests:**
   ```bash
   npm test
   ```
@@ -69,6 +80,22 @@ A **step-by-step tutorial** for learning web automation with Playwright and Cucu
   npm run test:smoke      # Run smoke tests
   npm run test:regression # Run regression tests
   npm run test:debug      # Run debug tests
+  ```
+
+#### Playwright Tests (Data Tables & Advanced)
+- **Run data tables examples:**
+  ```bash
+  npx playwright test tests/10-data-tables-consolidated.spec.ts
+  ```
+
+- **Run all Playwright tests:**
+  ```bash
+  npx playwright test tests/
+  ```
+
+- **Run with UI mode:**
+  ```bash
+  npx playwright test --ui
   ```
 
 ### Environment Variables
