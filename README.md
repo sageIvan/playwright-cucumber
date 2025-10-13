@@ -1,49 +1,56 @@
-# 🎭 Playwright + Cucumber Tutorial Project
+# 🎭 Playwright Tutorial Project
 
-A **step-by-step tutorial** for learning web automation with Playwright and Cucumber, designed specifically for **non-technical people** who want to learn testing.
+A **step-by-step tutorial** for learning web automation with Playwright, designed specifically for **non-technical people** who want to learn testing.
 
 ## Features
 
-- 🎭 **Playwright** - Modern browser automation
-- 🥒 **Cucumber** - BDD framework with Gherkin syntax
-- 🥒 **Data Tables** - Cucumber-style pipe-delimited tables with dynamic values in pure Playwright
+- 🎭 **Playwright** - Modern browser automation framework
+- 📊 **Data Tables** - Pipe-delimited tables with dynamic values for comprehensive test scenarios
 - 📘 **TypeScript** - Type safety and better IDE support
 - 🔄 **Parallel Execution** - Run tests in parallel for faster execution
-- 📊 **HTML & JSON Reports** - Comprehensive test reporting
+- 📊 **HTML Reports** - Comprehensive test reporting with built-in Playwright reporting
 - 📷 **Screenshots on Failure** - Automatic screenshot capture for failed tests
 - 🎯 **Cross-browser Testing** - Support for Chrome, Firefox, and Safari
-- 🏷️ **Tagging** - Organize and filter tests with tags
+- 🏷️ **Test Organization** - Organized test structure with progressive learning approach
+- 🎪 **Custom Fixtures** - Advanced Playwright fixtures for enhanced testing capabilities
 
 ## 📖 Quick Documentation Links
 
 - **[📚 Tutorial Guide](./TUTORIAL.md)** - Step-by-step learning path from beginner to advanced
 - **[⚙️ Playwright Methods Reference](./PLAYWRIGHT-METHODS.md)** - Complete API documentation with examples
-- **[🥒 Data Tables Guide](./DATA-TABLES.md)** - Cucumber-style data tables with dynamic values in Playwright
+- **[📊 Data Tables Guide](./DATA-TABLES.md)** - Pipe-delimited data tables with dynamic values in Playwright
+- **[🎪 Playwright Hooks Guide](./PLAYWRIGHT-HOOKS-GUIDE.md)** - Advanced hooks and fixtures documentation
 - **[🌐 Official Playwright Docs](https://playwright.dev/docs/intro)** - Comprehensive framework documentation
 
 ## Project Structure
 
 ```
-├── features/                 # Feature files with scenarios (Cucumber-based)
-│   ├── 00-quick-start.feature    # Quick start lesson
-│   ├── 01-basic-navigation.feature # Basic web navigation
-│   └── 06-api-basics.feature     # API testing introduction
-├── tests/                   # Pure Playwright test files
-│   ├── 00-quick-start.spec.ts    # Basic Playwright examples
-│   ├── 10-data-tables-consolidated.spec.ts # Data tables with dynamic values
-│   └── ...                       # Additional Playwright tests
-├── support/                 # Support files (Cucumber)
-│   ├── step-definitions/    # Step definition files
-│   │   ├── tutorial-steps.ts      # Web testing steps
-│   │   └── api-basic-steps.ts     # API testing steps
-│   ├── hooks.ts            # Before/After hooks
-│   └── world.ts            # World object with browser setup
+├── tests/                   # Playwright test files organized by learning progression
+│   ├── 00-quick-start.spec.ts         # Basic Playwright introduction
+│   ├── 01-basic-navigation.spec.ts    # Web navigation fundamentals
+│   ├── 02-finding-elements.spec.ts    # Element location strategies
+│   ├── 03-clicking-interactions.spec.ts # User interactions and forms
+│   ├── 04-waiting-timing.spec.ts      # Timing and waiting strategies
+│   ├── 05-advanced-scenarios.spec.ts  # Real-world testing scenarios
+│   ├── 06-api-basics.spec.ts          # API testing introduction
+│   ├── 07-api-methods.spec.ts         # HTTP methods and CRUD operations
+│   ├── 08-api-advanced.spec.ts        # Advanced API testing patterns
+│   ├── 09-advanced-hooks.spec.ts      # Custom fixtures and hooks
+│   └── 10-data-tables-consolidated.spec.ts # Data tables with dynamic values
 ├── reports/                # Test reports and screenshots
-├── DATA-TABLES.md          # Data tables documentation
-├── TUTORIAL.md             # Complete tutorial guide
-├── PLAYWRIGHT-METHODS.md   # API reference documentation  
-├── cucumber.js             # Cucumber configuration
-├── playwright.config.ts    # Playwright configuration
+│   ├── cucumber-report.html   # Legacy report (can be removed)
+│   └── screenshots/           # Failure screenshots
+├── test-results/           # Playwright test results
+├── playwright-report/      # Built-in Playwright HTML reports
+├── allure-report/         # Allure reporting (optional)
+├── DATA-TABLES.md         # Data tables documentation
+├── TUTORIAL.md            # Complete tutorial guide
+├── PLAYWRIGHT-METHODS.md  # API reference documentation
+├── PLAYWRIGHT-HOOKS-GUIDE.md # Hooks and fixtures guide
+├── test-base.ts           # Custom Playwright fixtures
+├── global-setup.ts        # Global test setup
+├── global-teardown.ts     # Global test cleanup
+├── playwright.config.ts   # Playwright configuration
 ├── tsconfig.json          # TypeScript configuration
 └── package.json           # Dependencies and scripts
 ```
@@ -64,38 +71,50 @@ A **step-by-step tutorial** for learning web automation with Playwright and Cucu
 
 ### Running Tests
 
-#### Cucumber Tests (Traditional BDD)
-- **Run all Cucumber tests:**
+#### All Playwright Tests
+- **Run all tests:**
   ```bash
-  npm test
+  npx playwright test
   ```
 
-- **Run tests in headed mode:**
+- **Run tests with UI mode (recommended for learning):**
   ```bash
-  npm run test:headed
+  npx playwright test --ui
   ```
 
-- **Run specific tags:**
+- **Run tests in headed mode (see browser):**
   ```bash
-  npm run test:smoke      # Run smoke tests
-  npm run test:regression # Run regression tests
-  npm run test:debug      # Run debug tests
+  npx playwright test --headed
   ```
 
-#### Playwright Tests (Data Tables & Advanced)
+#### Specific Test Files
+- **Run tutorial progression:**
+  ```bash
+  npx playwright test tests/00-quick-start.spec.ts      # Start here
+  npx playwright test tests/01-basic-navigation.spec.ts  # Web basics
+  npx playwright test tests/02-finding-elements.spec.ts  # Element finding
+  # ... continue through the numbered sequence
+  ```
+
 - **Run data tables examples:**
   ```bash
   npx playwright test tests/10-data-tables-consolidated.spec.ts
   ```
 
-- **Run all Playwright tests:**
+- **Run API tests:**
   ```bash
-  npx playwright test tests/
+  npx playwright test tests/0*-api-*.spec.ts
   ```
 
-- **Run with UI mode:**
+#### Test Reports
+- **Generate and view HTML report:**
   ```bash
-  npx playwright test --ui
+  npx playwright show-report
+  ```
+
+- **Run tests with tracing:**
+  ```bash
+  npx playwright test --trace on
   ```
 
 ### Environment Variables
@@ -114,42 +133,49 @@ Available environment variables:
 
 ### Writing Tests
 
-1. **Create feature files** in the `features/` directory using Gherkin syntax
-2. **Implement step definitions** in `support/step-definitions/`
-3. **Use the CustomWorld** object to access browser, context, and page instances
+1. **Create test files** in the `tests/` directory using Playwright syntax
+2. **Use custom fixtures** from `test-base.ts` for enhanced functionality
+3. **Follow the numbered progression** for learning (00-quick-start.spec.ts through 10-data-tables.spec.ts)
 
-Example feature:
-```gherkin
-Feature: Login functionality
-  Scenario: Successful login
-    Given I am on the login page
-    When I enter valid credentials
-    Then I should be logged in
+Example test file:
+```typescript
+import { test, expect } from '../test-base';
+
+test.describe('Login functionality', () => {
+  test('should login successfully', async ({ managedPage }) => {
+    await managedPage.goto('/login');
+    await managedPage.fill('#username', 'testuser');
+    await managedPage.fill('#password', 'password123');
+    await managedPage.click('#login-button');
+    
+    await expect(managedPage.locator('.welcome')).toBeVisible();
+  });
+});
 ```
 
-Example step definitions:
+Example with data tables:
 ```typescript
-import { Given, When, Then } from '@cucumber/cucumber';
-import { expect } from '@playwright/test';
-import { CustomWorld } from '../world';
-
-Given('I am on the login page', async function (this: CustomWorld) {
-  await this.page.goto('/login');
-});
+// Pipe-delimited data table with dynamic values
+const testDataWithHeaders = `
+| username        | password  | expected    |
+| ${randomEmail()} | pass123   | success     |
+| invalid@test    | ${empty()} | error      |
+| ${randomEmail()} | wrongpass | error      |
+`.trim();
 ```
 
 ## Configuration
 
-### Cucumber Configuration (`cucumber.js`)
-- Test file patterns
-- Step definition paths
-- Report formats
-- Parallel execution settings
+### Playwright Configuration (`playwright.config.ts`)
+- Browser settings and test execution options
+- Custom fixtures and global setup/teardown
+- Report generation and screenshot settings
+- Parallel execution and timeout configurations
 
 ### TypeScript Configuration (`tsconfig.json`)
-- Compilation options
-- Include/exclude patterns
-- Type definitions
+- Compilation options optimized for Playwright
+- Include/exclude patterns for test files
+- Type definitions for enhanced IDE support
 
 ## Documentation
 
@@ -173,14 +199,15 @@ This project includes comprehensive documentation to help you learn and referenc
 
 - **[Official Playwright Documentation](https://playwright.dev/docs/intro)** - Complete API reference and guides
 - **[Playwright GitHub Repository](https://github.com/microsoft/playwright)** - Source code and issue tracking
-- **[Cucumber.js Documentation](https://cucumber.io/docs/cucumber/)** - BDD framework documentation
+- **[Playwright Community](https://playwright.dev/community/welcome)** - Community resources and support
 
 ## Reports
 
-After running tests, reports are generated in the `reports/` directory:
-- HTML report: `reports/cucumber-report.html`
-- JSON report: `reports/cucumber-report.json`
-- Screenshots: `reports/screenshots/` (for failed tests)
+Playwright generates comprehensive reports automatically:
+- **Built-in HTML report**: `playwright-report/index.html`
+- **Test results**: `test-results/` directory with detailed logs
+- **Screenshots**: Automatically captured on test failures
+- **Legacy reports**: `reports/` directory (can be cleaned up)
 
 ## Browser Support
 
@@ -190,28 +217,35 @@ After running tests, reports are generated in the `reports/` directory:
 
 Set the browser using the `BROWSER` environment variable or in your `.env` file.
 
-## Tags
+## Test Organization
 
-Use tags to organize and filter your tests:
+Organize and filter your tests using Playwright's built-in capabilities:
 
-- `@smoke` - Critical functionality tests
-- `@regression` - Full regression test suite
-- `@debug` - Tests for debugging purposes
-
-Run specific tags:
+### By File Pattern:
 ```bash
-npx cucumber-js --tags "@smoke"
-npx cucumber-js --tags "@smoke and @regression"
-npx cucumber-js --tags "not @debug"
+npx playwright test tests/0*-api-*.spec.ts    # API tests only
+npx playwright test tests/0[1-5]-*.spec.ts    # Web UI tests (lessons 1-5)
 ```
 
+### By Test Name:
+```bash
+npx playwright test --grep "navigation"        # Tests with "navigation" in the name
+npx playwright test --grep "login|auth"       # Tests related to login or auth
+```
+
+### By Project (if configured):
+```bash
+npx playwright test --project=chromium         # Chrome browser only
+npx playwright test --project=firefox         # Firefox browser only
+```
 ## Best Practices
 
-1. **Page Object Model** - Create page objects for better maintainability
-2. **Descriptive Scenarios** - Write clear and descriptive Gherkin scenarios
-3. **Independent Tests** - Ensure tests can run independently
-4. **Clean Up** - Use hooks for setup and cleanup
-5. **Error Handling** - Implement proper error handling and reporting
+1. **Custom Fixtures** - Use the custom fixtures from `test-base.ts` for enhanced functionality
+2. **Descriptive Test Names** - Write clear and descriptive test descriptions
+3. **Independent Tests** - Ensure tests can run independently without dependencies
+4. **Progressive Learning** - Follow the numbered sequence for optimal learning
+5. **Data Tables** - Use the data table functionality for comprehensive test scenarios
+6. **Error Handling** - Leverage automatic screenshot capture and detailed reporting
 
 ## Allure Reporting
 
@@ -261,13 +295,14 @@ npm run report:serve
 
 Run tests with debugging enabled:
 ```bash
-HEADLESS=false npm run test:debug
+npx playwright test --headed --debug
 ```
 
 This will:
-- Run in headed mode
-- Execute only tests tagged with `@debug`
+- Run in headed mode with browser visible
+- Pause execution for step-by-step debugging
 - Show browser interactions in real-time
+- Allow interactive debugging with the Playwright Inspector
 
 ---
 

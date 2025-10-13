@@ -1,6 +1,6 @@
 # 🪝 Playwright Test Hooks Guide
 
-This guide explains how to use Playwright test hooks to replace your previous Cucumber hooks (`Before`, `After`, `BeforeAll`, `AfterAll`).
+This comprehensive guide explains how to use Playwright's powerful test hooks and lifecycle management for robust testing.
 
 ## 📋 **Hook Types Available**
 
@@ -13,8 +13,8 @@ This guide explains how to use Playwright test hooks to replace your previous Cu
 - `test.afterAll()` - Runs once after all tests in a describe block
 
 ### 🧪 **Test-level Hooks**
-- `test.beforeEach()` - Runs before each individual test (like Cucumber `Before`)
-- `test.afterEach()` - Runs after each individual test (like Cucumber `After`)
+- `test.beforeEach()` - Runs before each individual test for setup and initialization
+- `test.afterEach()` - Runs after each individual test for cleanup and teardown
 
 ---
 
@@ -58,7 +58,7 @@ test.describe("Your Test Suite", () => {
 
   // 🔄 beforeEach - Setup for each test
   test.beforeEach(async ({ managedPage }) => {
-    // Runs before EACH test (like Cucumber Before)
+    // Runs before EACH test for individual test setup
     console.log('🎯 Setting up individual test');
     
     // Examples:
@@ -70,7 +70,7 @@ test.describe("Your Test Suite", () => {
 
   // 🧹 afterEach - Cleanup after each test
   test.afterEach(async ({ managedPage }, testInfo) => {
-    // Runs after EACH test (like Cucumber After)
+    // Runs after EACH test for individual test cleanup
     console.log('🧹 Cleaning up test');
     
     // Examples:
@@ -104,14 +104,16 @@ test.describe("Your Test Suite", () => {
 
 ---
 
-## 🆚 **Cucumber vs Playwright Hook Mapping**
+## � **Playwright Hook Hierarchy and Execution Order**
 
-| **Cucumber Hook** | **Playwright Equivalent** | **When It Runs** |
-|-------------------|---------------------------|-------------------|
-| `BeforeAll` | `globalSetup` or `test.beforeAll()` | Once before all tests |
-| `Before` | `test.beforeEach()` | Before each test |
-| `After` | `test.afterEach()` | After each test |
-| `AfterAll` | `globalTeardown` or `test.afterAll()` | Once after all tests |
+| **Hook Type** | **Scope** | **When It Runs** | **Use Case** |
+|---------------|-----------|-------------------|--------------|
+| `globalSetup` | Entire test suite | Once before ALL tests | Environment setup, database initialization |
+| `test.beforeAll()` | Per describe block | Once before tests in block | Expensive setup, authentication tokens |
+| `test.beforeEach()` | Per individual test | Before each test | Navigation, state reset, user login |
+| `test.afterEach()` | Per individual test | After each test | Cleanup, screenshots, logout |
+| `test.afterAll()` | Per describe block | Once after tests in block | Resource cleanup, data cleanup |
+| `globalTeardown` | Entire test suite | Once after ALL tests | Final cleanup, report generation |
 
 ---
 

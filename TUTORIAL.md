@@ -1,27 +1,34 @@
 # 📚 Playwright Tutorial: Learn Web Automation Step by Step
 
-Welcome to the **Playwright Tutorial for Non-Technical People**! This project is designed to teach web automation using Playwright and Cucumber in a progressive, easy-to-understand manner.
+Welcome to the **Playwright Tutorial for Non-Technical People**! This project is designed to teach web automation using modern Playwright in a progressive, easy-to-understand manner.
 
 ## 🎯 What You'll Learn
 
-This tutorial takes you from complete beginner to confident web automation tester through **5 progressive lessons**:
+This tutorial takes you from complete beginner to confident web automation tester through **11 progressive lessons**:
+
+### 🎯 Lesson 0: Quick Start
+**File:** `tests/00-quick-start.spec.ts`
+- Your first Playwright test
+- Understanding test structure and syntax
+- Basic assertions and expectations
+- **Skills:** Playwright fundamentals, test structure
 
 ### 📖 Lesson 1: Basic Web Navigation
-**File:** `features/01-basic-navigation.feature`
+**File:** `tests/01-basic-navigation.spec.ts`
 - How to open a website (like typing a URL in your browser)
 - Understanding when a page is loaded
 - Checking page titles and URLs
 - **Skills:** Basic navigation, page verification
 
 ### 🔍 Lesson 2: Finding Things on Webpages  
-**File:** `features/02-finding-elements.feature`
+**File:** `tests/02-finding-elements.spec.ts`
 - How to look for specific text on a webpage
 - Finding buttons, links, and other clickable elements
 - Understanding HTML elements (headings, paragraphs, links)
 - **Skills:** Element location, text verification
 
 ### 👆 Lesson 3: Clicking and Interacting
-**File:** `features/03-clicking-interactions.feature`
+**File:** `tests/03-clicking-interactions.spec.ts`
 - Clicking on links and buttons
 - Filling out forms (typing in input fields)
 - Working with dropdowns and selections
@@ -29,14 +36,14 @@ This tutorial takes you from complete beginner to confident web automation teste
 - **Skills:** User interactions, form handling
 
 ### ⏰ Lesson 4: Waiting and Timing
-**File:** `features/04-waiting-timing.feature`
+**File:** `tests/04-waiting-timing.spec.ts`
 - Understanding why we need to wait for websites
 - Handling slow-loading content
 - Dealing with timeouts and errors
 - **Skills:** Patience in automation, timing control
 
 ### 🚀 Lesson 5: Advanced Real-World Scenarios
-**File:** `features/05-advanced-scenarios.feature`
+**File:** `tests/05-advanced-scenarios.spec.ts`
 - Working with real websites (e-commerce, login forms)
 - Handling JavaScript alerts and popups
 - Testing dynamic content that changes
@@ -44,7 +51,7 @@ This tutorial takes you from complete beginner to confident web automation teste
 - **Skills:** Real-world application, complex scenarios
 
 ### 🌐 Lesson 6: Introduction to API Testing
-**File:** `features/06-api-basics.feature`
+**File:** `tests/06-api-basics.spec.ts`
 - Understanding what APIs are (like invisible waiters)
 - Making GET requests to retrieve data
 - Checking response status codes and JSON data
@@ -52,7 +59,7 @@ This tutorial takes you from complete beginner to confident web automation teste
 - **Skills:** API basics, REST concepts, JSON validation
 
 ### 📡 Lesson 7: Different HTTP Methods
-**File:** `features/07-api-methods.feature`
+**File:** `tests/07-api-methods.spec.ts`
 - POST requests (creating new data)
 - PUT requests (updating entire records)
 - PATCH requests (partial updates)
@@ -60,12 +67,28 @@ This tutorial takes you from complete beginner to confident web automation teste
 - **Skills:** CRUD operations, HTTP methods, request/response patterns
 
 ### 🔐 Lesson 8: Advanced API Testing
-**File:** `features/08-api-advanced.feature`
+**File:** `tests/08-api-advanced.spec.ts`
 - Authentication with headers and tokens
 - Error handling and validation testing
 - Performance and rate limit testing
 - Schema validation and data workflows
 - **Skills:** Authentication, performance testing, complex validations
+
+### 🎪 Lesson 9: Advanced Hooks and Fixtures
+**File:** `tests/09-advanced-hooks.spec.ts`
+- Custom Playwright fixtures
+- Before/After hooks and lifecycle management
+- Screenshot capture and test organization
+- Global setup and teardown
+- **Skills:** Test architecture, advanced Playwright features
+
+### 📊 Lesson 10: Data Tables and Dynamic Testing
+**File:** `tests/10-data-tables-consolidated.spec.ts`
+- Pipe-delimited data tables with dynamic values
+- Template literal parsing and function execution
+- Data-driven testing patterns
+- Dynamic test data generation
+- **Skills:** Advanced data handling, scalable test patterns
 
 ## 🏃‍♀️ How to Run the Tutorial
 
@@ -77,76 +100,74 @@ npm install
 
 ### Running Individual Lessons
 
-#### Start with Lesson 1 (Recommended for beginners):
+#### Start with Lesson 0 (Recommended for absolute beginners):
 ```bash
-npm test -- --tags "@lesson-1"
+npx playwright test tests/00-quick-start.spec.ts
 ```
 
-#### Progress through each lesson:
+#### Progress through each lesson sequentially:
 ```bash
-# Lesson 2 - Finding Elements
-npm test -- --tags "@lesson-2"
+# Lesson 1 - Basic Navigation
+npx playwright test tests/01-basic-navigation.spec.ts
+
+# Lesson 2 - Finding Elements  
+npx playwright test tests/02-finding-elements.spec.ts
 
 # Lesson 3 - Interactions
-npm test -- --tags "@lesson-3"
+npx playwright test tests/03-clicking-interactions.spec.ts
 
-# Lesson 4 - Waiting
-npm test -- --tags "@lesson-4"
+# Lesson 4 - Waiting and Timing
+npx playwright test tests/04-waiting-timing.spec.ts
 
-# Lesson 5 - Advanced Web Testing
-npm test -- --tags "@lesson-5"
+# Lesson 5 - Advanced Web Scenarios
+npx playwright test tests/05-advanced-scenarios.spec.ts
 
 # Lesson 6 - API Basics
-npm test -- --tags "@lesson-6"
+npx playwright test tests/06-api-basics.spec.ts
 
 # Lesson 7 - HTTP Methods
-npm test -- --tags "@lesson-7"
+npx playwright test tests/07-api-methods.spec.ts
 
 # Lesson 8 - Advanced API Testing
-npm test -- --tags "@lesson-8"
+npx playwright test tests/08-api-advanced.spec.ts
+
+# Lesson 9 - Advanced Hooks
+npx playwright test tests/09-advanced-hooks.spec.ts
+
+# Lesson 10 - Data Tables
+npx playwright test tests/10-data-tables-consolidated.spec.ts
 ```
 
-#### Or use the convenient shortcuts:
+### Advanced Testing Options
+
+#### Run with UI Mode (Interactive):
 ```bash
-npm run tutorial:lesson1    # Basic Navigation
-npm run tutorial:lesson2    # Finding Elements
-npm run tutorial:lesson3    # Interactions
-npm run tutorial:lesson4    # Waiting & Timing
-npm run tutorial:lesson5    # Advanced Web
-npm run tutorial:lesson6    # API Basics
-npm run tutorial:lesson7    # HTTP Methods
-npm run tutorial:lesson8    # Advanced API
+npx playwright test --ui
 ```
 
-### Running by Difficulty Level
-
-#### Easy scenarios (great for beginners):
+#### Run tests in headed mode (see browser):
 ```bash
-npm test -- --tags "@easy"
+npx playwright test --headed
 ```
 
-#### Medium difficulty:
+#### Run specific test by name:
 ```bash
-npm test -- --tags "@medium"
-```
-
-#### Hard/Expert level:
-```bash
-npm test -- --tags "@hard or @expert"
+npx playwright test --grep "navigation"
 ```
 
 ### Run All Tutorial Lessons:
 ```bash
-npm test -- --tags "@tutorial"
-# OR
-npm run tutorial
+npx playwright test tests/
 ```
 
 ### Run API Testing Only:
 ```bash
-npm test -- --tags "@api"
-# OR
-npm run tutorial:api
+npx playwright test tests/0*-api-*.spec.ts
+```
+
+### Generate Test Reports:
+```bash
+npx playwright show-report
 ```
 
 ## 📋 Understanding the Results
@@ -155,57 +176,64 @@ When you run a test, you'll see:
 
 ✅ **Green checkmarks** = Things that worked correctly  
 ❌ **Red X marks** = Things that failed (this is how you learn!)  
-➡️ **Arrows** = Actions being performed  
+🎯 **Test names** = What each test is checking  
 
 Example output:
 ```
-→ Navigating to: https://example.com
-✓ Browser window opened successfully
-✓ Page loaded successfully
-✓ Found text: "Example Domain"
+Running 3 tests using 1 worker
+
+  ✓ [chromium] › 01-basic-navigation.spec.ts:8:3 › Basic Navigation › should navigate to example.com (2.1s)
+  ✓ [chromium] › 01-basic-navigation.spec.ts:15:3 › Basic Navigation › should have correct title (1.8s)
+  ✓ [chromium] › 01-basic-navigation.spec.ts:22:3 › Basic Navigation › should contain example text (1.9s)
+
+  3 passed (7.2s)
 ```
 
 ## 🎓 Learning Path Recommendations
 
 ### For Complete Beginners:
-1. Start with `@lesson-1` and `@easy` tags
-2. Read the feature files to understand what each test does
-3. Run tests one lesson at a time
-4. Experiment by changing the test scenarios
+1. Start with `tests/00-quick-start.spec.ts` and `tests/01-basic-navigation.spec.ts`
+2. Read the test files to understand what each test does
+3. Run tests one lesson at a time in numerical order
+4. Use `--headed` mode to see what's happening in the browser
 
 ### For People with Some Technical Background:
-1. Run `@lesson-1` through `@lesson-3` quickly
-2. Focus on `@lesson-4` and `@lesson-5`
-3. Try `@medium` and `@hard` scenarios
-4. Look at the step definitions to understand the code
+1. Run lessons 0-2 quickly to get familiar with Playwright syntax
+2. Focus on lessons 3-5 for practical web testing skills
+3. Dive into API testing with lessons 6-8
+4. Study the test code to understand Playwright patterns
 
 ### For Developers Learning Playwright:
-1. Study the step definitions in `support/step-definitions/`
-2. Understand the world.ts and hooks.ts setup
-3. Try modifying existing scenarios
-4. Create your own test scenarios
+1. Study the test structure in each `.spec.ts` file
+2. Understand the custom fixtures in `test-base.ts`
+3. Explore global setup in `global-setup.ts` and `global-teardown.ts`
+4. Try modifying existing tests and create your own test scenarios
 
 ## 📁 Project Structure
 
 ```
-├── features/                          # All tutorial lessons
-│   ├── 01-basic-navigation.feature    # Lesson 1: Navigation basics
-│   ├── 02-finding-elements.feature    # Lesson 2: Finding elements
-│   ├── 03-clicking-interactions.feature # Lesson 3: User interactions
-│   ├── 04-waiting-timing.feature      # Lesson 4: Timing and waits
-│   ├── 05-advanced-scenarios.feature  # Lesson 5: Real-world tests
-│   ├── 06-api-basics.feature          # Lesson 6: API testing intro
-│   ├── 07-api-methods.feature         # Lesson 7: HTTP methods
-│   └── 08-api-advanced.feature        # Lesson 8: Advanced API
-├── support/
-│   ├── step-definitions/
-│   │   ├── tutorial-steps.ts          # Steps for lessons 1-3
-│   │   ├── tutorial-advanced-steps.ts # Steps for lessons 4-5
-│   │   ├── api-basic-steps.ts         # Steps for lessons 6-7
-│   │   └── api-advanced-steps.ts      # Steps for lesson 8
-│   ├── hooks.ts                       # Browser setup/teardown
-│   └── world.ts                       # Shared test context
-└── README.md                          # This guide
+├── tests/                             # All tutorial lessons (Playwright tests)
+│   ├── 00-quick-start.spec.ts        # Lesson 0: Playwright basics
+│   ├── 01-basic-navigation.spec.ts   # Lesson 1: Navigation basics
+│   ├── 02-finding-elements.spec.ts   # Lesson 2: Finding elements
+│   ├── 03-clicking-interactions.spec.ts # Lesson 3: User interactions
+│   ├── 04-waiting-timing.spec.ts     # Lesson 4: Timing and waits
+│   ├── 05-advanced-scenarios.spec.ts # Lesson 5: Real-world tests
+│   ├── 06-api-basics.spec.ts         # Lesson 6: API testing intro
+│   ├── 07-api-methods.spec.ts        # Lesson 7: HTTP methods
+│   ├── 08-api-advanced.spec.ts       # Lesson 8: Advanced API
+│   ├── 09-advanced-hooks.spec.ts     # Lesson 9: Hooks and fixtures
+│   └── 10-data-tables-consolidated.spec.ts # Lesson 10: Data tables
+├── test-base.ts                       # Custom Playwright fixtures
+├── global-setup.ts                   # Global test setup
+├── global-teardown.ts                # Global test teardown
+├── playwright.config.ts              # Playwright configuration
+├── reports/                          # Test reports and screenshots
+├── test-results/                     # Playwright test results
+├── DATA-TABLES.md                    # Data tables documentation
+├── PLAYWRIGHT-METHODS.md             # Playwright API reference
+├── PLAYWRIGHT-HOOKS.md               # Hooks and fixtures guide
+└── README.md                         # Project overview
 ```
 
 ## 🌐 Websites Used in This Tutorial
@@ -222,7 +250,7 @@ All these websites are designed for testing and learning!
 ## 💡 Tips for Success
 
 1. **Start Slow**: Don't rush through the lessons
-2. **Read the Features**: Each `.feature` file explains what the test does in plain English
+2. **Read the Test Files**: Each `.spec.ts` file has descriptive test names and comments
 3. **Experiment**: Try changing URLs or text in the tests
 4. **Ask Questions**: Look at the step definitions if you want to understand the code
 5. **Practice**: Re-run tests multiple times to see consistent behavior
@@ -237,7 +265,19 @@ All these websites are designed for testing and learning!
 ### Want to see what's happening?
 Run tests in headed mode (with visible browser):
 ```bash
-npm run test:headed -- --tags "@lesson-1"
+npx playwright test --headed tests/01-basic-navigation.spec.ts
+```
+
+### Need more debugging info?
+Run tests with tracing:
+```bash
+npx playwright test --trace on
+```
+
+### Want to step through tests interactively?
+Use UI mode:
+```bash
+npx playwright test --ui
 ```
 
 ### Need to debug?
